@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Banner Rotativo</title>
+
+    <script type="text/javascript">
+
+        //declaracao de variaveis
+        var banners = ["https://homeflora.pt/wp-content/uploads/significado-flores.jpg", "https://www.rpsengenharia.com.br/wp-content/uploads/2020/06/flores-de-inverno-conheca-10-especies-que-gostam-do-frio.jpeg", "https://crysmax.com.br/wp-content/uploads/2020/04/flores-europeias-margaridas-800x800.jpg"];
+        var alternativo = ["texto 1", "texto 2", "texto 3"];
+        var titulo = ["parangaricotirimirruaro", "titulo 2", "algum title"];
+
+        //
+        var contador = 0;
+
+
+        //functions
+        function rotativo() {
+            //nesta linha endereco da imagem
+            document.images[0].src = banners[contador];
+            //o alt da imagem
+            document.images[0].alt = alternativo[contador];
+            //title das imagens
+            document.images[0].title = titulo[contador];
+            //
+            contador++
+            //document.write(contador);
+            //
+            if (contador == banners.length) {
+                contador = 0
+            }
+            //contador de tempo -> timer
+            setTimeout("rotativo()", 3000)
+        }
+
+    </script>
+
+</head>
+
+<body onLoad="rotativo()">
+    <img src="https://img.freepik.com/fotos-gratis/flores-cor-de-rosa-em-rosa_24837-301.jpg" alt="">
+</body>
+
+</html>
